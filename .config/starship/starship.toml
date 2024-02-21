@@ -1,0 +1,105 @@
+palette = "catppuccin_mocha"
+
+format = """
+[▒▓](mantle)\
+$directory\
+[](fg:mantle bg:sky)\
+[](fg:sky bg:lavender)\
+[](fg:lavender bg:blue)\
+$git_branch\
+$git_status\
+[ ](fg:blue)\
+"""
+
+right_format = """
+$cmd_duration\
+$nodejs\
+$battery\
+"""
+# [░▒▓](#6272a4)\
+# add_newline = false
+
+# Replace the '❯' symbol in the prompt with '➜'
+# [character] # The name of the module we are configuring is 'character'
+# success_symbol = '[❯❯](bold green)'
+# error_symbol = '[❯❯](bold red)'# The 'successcd_symbol' segment is being set to '➜' with the color 'bold green'
+
+# [username]
+# show_always = true
+# style_user = "bg:#282A36 fg:#bd93f9 bold"
+# style_root = "bg:#bd93f9 fg:#000000 italic"
+# format = '[ $user ]($style)'
+# disabled = false
+
+[directory]
+style = "fg:lavender bg:mantle"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncate_to_repo = false
+truncation_symbol = "…/"
+
+[directory.substitutions]
+# "Documents" = "  "
+# "Downloads" = "  "
+# # "Music" = ""
+# "Pictures" = "  "
+# "~/github.com/" = "http://github.com"
+
+[git_branch]
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol $branch ](fg:mantle bg:blue)]($style)'
+
+[git_status]
+style = "bg:blue"
+format = '[[($all_status$ahead_behind )](fg:mantle bg:blue)]($style)'
+
+[nodejs]
+symbol = ""
+format = '[[ $symbol($version)](fg:#ff5555)]($style)'
+
+[battery]
+format = '[ $percentage]($style)'
+
+[[battery.display]]
+threshold = 50
+style = 'fg:#50fa7b'
+
+
+[cmd_duration]
+min_time = 1000
+format = ' [$duration](bold yellow)'
+#
+# [time]
+# disabled = false
+# time_format = "%R" # Hour:Minute Format
+# style = "bg:#282A36 fg:blue bold"
+# format = '[[ $time ](bg:base fg:lavender bold)]($style)'
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
