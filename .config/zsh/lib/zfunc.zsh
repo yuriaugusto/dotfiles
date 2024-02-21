@@ -179,6 +179,17 @@ find_man() {
     man $1 | grep -- $2
 }
 
+srccmd() {
+    compgen -c | sort | fzf --preview 'man {}' --preview-window 'right:60%:wrap' | xargs man
+} 
+
+srcman() {
+    local man_page
+    man_page=$(man -k . | sort | fzf --prompt='Man Pages> ' --preview='echo {} | awk "{print \$1}" | xargs man' --preview-window=down:50%:wrap)
+    man "$(echo "$man_page" | awk '{print $1}')"
+}
+
+
 #Lists URLs that start with 'http' or 'https' on a webpage using cURL
 #
 #    Usage: listurls https://example.org
