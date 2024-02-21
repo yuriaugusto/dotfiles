@@ -56,7 +56,9 @@ man() {		# some settings for man?
 #See this for a list of language codes:
 #http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 #
-function translate(){ wget -U "Mozilla/5.0" -qO - "http://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=$2&dt=t&q=$(echo $1 | sed "s/[\"'<>]//g")" | sed "s/,,,0]],,.*//g" | awk -F'"' '{print $2, $6}'; }
+function translate(){ 
+  wget -U "Mozilla/5.0" -qO - "http://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=$2&dt=t&q=$(echo $1 | sed "s/[\"'<>]//g")" | sed "s/,,,0]],,.*//g" | awk -F'"' '{print $2, $6}'; 
+}
 
 #Converting audio and video files using ffmpeg and eyeD3
 #(sudo pip install eyeD3). Album art is removed in the '2ogg' function
@@ -166,13 +168,21 @@ function up(){
         echo "Could not go up $limit directories.";
     fi
 }
+
 function gacp(){
-  git add .
-  git commit -m "update"
-  git push -u origin main
+    git add .
+    git commit -m "Update"
+    git push -u origin main
 }
+
+find_man() {
+    man $1 | grep -- $2
+}
+
 #Lists URLs that start with 'http' or 'https' on a webpage using cURL
 #
 #    Usage: listurls https://example.org
 #
-function listurls() { curl -s -f -L "$1" | grep -Eo '"(http|https)://[a-zA-Z0-9#~.*,/!?=+&_%:-]*"' | sed 's/"//g' ; }
+function listurls() {
+    curl -s -f -L "$1" | grep -Eo '"(http|https)://[a-zA-Z0-9#~.*,/!?=+&_%:-]*"' | sed 's/"//g' ; 
+}
