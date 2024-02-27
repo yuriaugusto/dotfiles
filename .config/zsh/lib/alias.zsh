@@ -114,5 +114,6 @@ alias hackernews='curl hkkr.in' # get hacker news
 
 alias restartsound='systemctl --user restart pipewire pipewire-pulse && systemctl --user daemon-reload'
 alias reload='source $ZDOTDIR/.zshrc'
-alias editzshrc='vim $ZDOTDIR/.zshrc'
-alias editalias='vim $ZDOTDIR/lib/alias.zsh'
+alias editzshrc='nvim $ZDOTDIR/.zshrc'
+alias editalias='nvim $ZDOTDIR/lib/alias.zsh'
+alias editfunc='nvim $ZDOTDIR/lib/zfunc.zsh'

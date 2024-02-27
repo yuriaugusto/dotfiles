@@ -169,6 +169,25 @@ function up(){
     fi
 }
 
+function syncrepos() {
+    local notes='/home/yuri/Documents/ObsidianNotes/'
+    local dotfiles='/home/yuri/git/dotfiles/'
+    
+    if cd "$1"; then
+        if [[ $(git status --porcelain) ]]; then
+            git add . 
+            git commit -m "Sync"
+            git push
+        else
+            echo "Nothing to commit."
+        fi
+    else
+        echo "Failed to change directory to $1" >&2
+        return 1
+    fi
+}
+
+
 function gacp(){
     git add .
     git commit -m "Update"
