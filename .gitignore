@@ -1,2 +1,4 @@
 .config/zsh/zhistory
 .config/zsh/.zsh_history
+.config/thefuck/__pycache__/
+.config/zsh/.zcompdump*

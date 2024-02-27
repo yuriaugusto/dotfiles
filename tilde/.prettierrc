@@ -1,0 +1,6 @@
+{
+  "htmlWhitespaceSensitivity": "ignore",
+  "proseWrap": "always",
+  "singleQuote": true,
+  "trailingComma": "es5"
+}

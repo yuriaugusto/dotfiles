@@ -1,0 +1,19 @@
+/* Add padding to terminal */
+VteTerminal,
+TerminalScreen,
+vte-terminal {
+    padding: 10px;
+    -VteTerminal-inner-border: 10px;
+}
+
+/* Custom code to reduce titlebar size */
+window.ssd headerbar.titlebar {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    min-height: 0;
+}
+window.ssd headerbar.titlebar button.titlebutton {
+    padding: 1px;
+    min-height: 0;
+    min-width: 0;
+}
