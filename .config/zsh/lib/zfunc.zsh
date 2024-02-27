@@ -172,26 +172,27 @@ function up(){
 function syncrepos() {
     local notes='/home/yuri/Documents/ObsidianNotes/'
     local dotfiles='/home/yuri/git/dotfiles/'
+    local commit_message="${2:-Sync}"
     
     if cd "$1"; then
+        echo "Changed directory to: $1"
+        
         if [[ $(git status --porcelain) ]]; then
+            echo "Changes detected. Adding files to the staging area..."
             git add . 
-            git commit -m "Sync"
+            
+            echo "Committing changes with message: $commit_message"
+            git commit -m "$commit_message"
+            
+            echo "Pushing changes to remote repository..."
             git push
         else
-            echo "Nothing to commit."
+            echo "No changes to commit."
         fi
     else
         echo "Failed to change directory to $1" >&2
         return 1
     fi
-}
-
-
-function gacp(){
-    git add .
-    git commit -m "Update"
-    git push -u origin main
 }
 
 find_man() {
