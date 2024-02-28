@@ -1,3 +1,6 @@
+# https://blog.patshead.com/2011/04/improve-your-oh-my-zsh-startup-time-maybe.html
+skip_global_compinit=1
+
 export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 
 export XDG_CONFIG_HOME="$HOME/.config"
