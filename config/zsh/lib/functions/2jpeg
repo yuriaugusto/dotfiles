@@ -1,0 +1,2 @@
+function 2jpeg() { convert "$1" "${1%%.*}.jpg" && rm "$1"; }
+

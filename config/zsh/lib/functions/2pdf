@@ -1,0 +1,9 @@
+function 2pdf() {
+    if [ ${1: -4} == ".html" ]
+    then
+        soffice --headless --convert-to odt "$1"
+        soffice --headless --convert-to pdf "${1%%.*}.html"
+    else
+        soffice --headless --convert-to pdf "$1"
+    fi
+}

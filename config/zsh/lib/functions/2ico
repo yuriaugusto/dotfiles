@@ -1,0 +1,2 @@
+
+function 2ico() { convert -background transparent "$1" -define icon:auto-resize=16,32,48,64,128 "${1%%.*}.ico" && rm "$1"; }
