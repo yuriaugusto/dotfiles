@@ -3,6 +3,7 @@
 export HISTFILE="$ZCACHEDIR/zhistory"     # History filepath
 export HISTSIZE=10000                   # Maximum events for internal history
 export SAVEHIST=10000                   # Maximum events in history file
+export HISTORY_IGNORE="(ls|cd|pwd|zsh|exit|cd ..)"
 
 # history options
 setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format.

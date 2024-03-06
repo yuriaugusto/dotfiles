@@ -67,6 +67,10 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 
+# suffix
+alias -s {md,markdown,txt}="$EDITOR"
+alias -s py='python'
+
 alias nvimd='nvim --noplugin -u NONE' # lancar sem plugins e configuracoes
 
 # Find 10 largest files

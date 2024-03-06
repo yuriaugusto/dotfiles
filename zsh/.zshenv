@@ -13,7 +13,12 @@ export ZCACHEDIR="$XDG_CACHE_HOME/zsh"
 
 export DOTFILES="$HOME/git/dotfiles"
 
-export EDITOR="nvim"
+if builtin command -v nvim > /dev/null 2>&1; then
+    export EDITOR="nvim"
+else
+    export EDITOR="vim"
+fi
+
 export TERMINAL="gnome-terminal"
 export BROWSER="firefox"
 export PAGER="less"
