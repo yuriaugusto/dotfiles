@@ -25,10 +25,12 @@ bindkey -M viins '^r' history-incremental-pattern-search-backward
 bindkey -M viins '^s' history-incremental-pattern-search-forward
 
 bindkey "^[[3~" delete-char
-bindkey "^K" kill-whole-line                      # ctrl-k
+bindkey "^K" kill-line                            # ctrl-k
+bindkey "^U" kill-whole-line                      # ctrl-u
 bindkey "^A" beginning-of-line                    # ctrl-a
 bindkey "^E" end-of-line                          # ctrl-e
 bindkey "^D" delete-char                          # ctrl-d
+bindkey "^L" clear-screen                         # ctrl-l
 #bindkey "^F" forward-char                         # ctrl-f
 bindkey "^F" forward-word                         # ctrl-f
 #bindkey "^B" backward-char                        # ctrl-b
