@@ -51,7 +51,6 @@ body,html{overflow-y: auto}
 .wordmark{background-size: 134px !important; margin-inline-start: 0 !important; fill: FieldText !important;}
 }
 
-
 @-moz-document url-prefix(about:devtools), url-prefix(chrome:){
 /*  Devtools tabs  */
 .devtools-tab-line{border-radius: 0 0 5px 5px !important; height: 2px !important}
@@ -74,10 +73,6 @@ body,html{overflow-y: auto}
 .command{  border-radius: 8px !important; margin: 0 10px; width: 90%;}}
 
 @-moz-document url-prefix(chrome:){
-
-
-
-
 /*  Notification fix*/
 #toolbox-notificationbox  .notification{ background: color-mix(in srgb, #000 20%, -moz-Dialog) !important; border: none !important; padding: 3px !important; }
 
@@ -268,11 +263,7 @@ body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.
 .changes__copy-all-changes-button{width: -moz-available; padding: 6px !important; background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; border-radius: 10px !important; margin: 6px !important; background-position: 13px 9.5px !important; height: 35px !important;}
 .changes__copy-all-changes-button:hover{background-color: color-mix(in srgb, currentColor 13%, -moz-Dialog) !important}
 
-
-
 /*  Accessability  */
 .accessibility-check{background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;}
 .right-sidebar{background: -moz-Dialog !important;}
 .checks .list > *{padding: 0 !important}}
-
-
