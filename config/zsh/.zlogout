@@ -1,2 +1,3 @@
+syncrepos
 clear
 reset

@@ -8,3 +8,5 @@
         zrecompile -pq "$zcompdump"
     fi
 ) &!
+
+syncrepos

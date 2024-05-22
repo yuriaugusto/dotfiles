@@ -1,25 +1,37 @@
 function syncrepos() {
     local notes='/home/yuri/Documents/ObsidianNotes/'
-    local dotfiles='/home/yuri/git/dotfiles/'
     local commit_message="${2:-Sync}"
     
-    if cd "$1"; then
-        echo "Changed directory to: $1"
-        
+    cd $notes
+    echo "Changed directory to: $1"
+
+    # Fetch latest changes from the remote repository
+    echo "Fetching latest changes from the remote repository..."
+    git fetch
+
+    # Compare local and remote repositories
+    local_status=$(git rev-parse @)
+    remote_status=$(git rev-parse @{u})
+    base_status=$(git merge-base @ @{u})
+
+    if [ "$local_status" = "$remote_status" ]; then
+        echo "Local and remote repositories are up to date. Nothing to do."
+    elif [ "$local_status" = "$base_status" ]; then
+        echo "Local repository is behind the remote repository. Pulling changes..."
+        git pull
+    elif [ "$remote_status" = "$base_status" ]; then
+        echo "Local repository is ahead of the remote repository. Changes detected. Adding files to the staging area..."
         if [[ $(git status --porcelain) ]]; then
-            echo "Changes detected. Adding files to the staging area..."
-            git add . 
-            
+            git add .
             echo "Committing changes with message: $commit_message"
             git commit -m "$commit_message"
-            
             echo "Pushing changes to remote repository..."
             git push
         else
             echo "No changes to commit."
         fi
     else
-        echo "Failed to change directory to $1" >&2
-        return 1
+        echo "Local and remote repositories have diverged. Manual intervention required."
     fi
 }
+
