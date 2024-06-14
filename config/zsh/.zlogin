@@ -9,4 +9,4 @@
     fi
 ) &!
 
-syncrepos
+syncrepos "/home/yuri/Documents/ObsidianNotes/" "Sync notes"

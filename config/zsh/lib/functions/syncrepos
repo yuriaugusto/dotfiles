@@ -1,37 +1,37 @@
 function syncrepos() {
     local notes='/home/yuri/Documents/ObsidianNotes/'
     local commit_message="${2:-Sync}"
-    
-    cd $notes
-    echo "Changed directory to: $1"
+
+    # Change to the specified directory
+    if cd "$notes"; then
+        echo "Changed directory to: $notes"
+    else
+        echo "Failed to change directory to $notes" >&2
+        return 1
+    fi
 
     # Fetch latest changes from the remote repository
     echo "Fetching latest changes from the remote repository..."
-    git fetch
+    git fetch || { echo "Failed to fetch changes from the remote repository" >&2; return 1; }
 
-    # Compare local and remote repositories
-    local_status=$(git rev-parse @)
-    remote_status=$(git rev-parse @{u})
-    base_status=$(git merge-base @ @{u})
-
-    if [ "$local_status" = "$remote_status" ]; then
-        echo "Local and remote repositories are up to date. Nothing to do."
-    elif [ "$local_status" = "$base_status" ]; then
-        echo "Local repository is behind the remote repository. Pulling changes..."
-        git pull
-    elif [ "$remote_status" = "$base_status" ]; then
-        echo "Local repository is ahead of the remote repository. Changes detected. Adding files to the staging area..."
-        if [[ $(git status --porcelain) ]]; then
-            git add .
-            echo "Committing changes with message: $commit_message"
-            git commit -m "$commit_message"
-            echo "Pushing changes to remote repository..."
-            git push
-        else
-            echo "No changes to commit."
-        fi
+    # Check for local changes and commit them if any
+    if [[ $(git status --porcelain) ]]; then
+        echo "Local changes detected. Adding files to the staging area..."
+        git add .
+        echo "Committing changes with message: $commit_message"
+        git commit -m "$commit_message" || { echo "Failed to commit changes" >&2; return 1; }
     else
-        echo "Local and remote repositories have diverged. Manual intervention required."
+        echo "No local changes to commit."
     fi
+
+    # Synchronize with remote repository
+    echo "Synchronizing with remote repository..."
+    git pull --rebase || { echo "Failed to pull changes from the remote repository" >&2; return 1; }
+    git push || { echo "Failed to push changes to the remote repository" >&2; return 1; }
+
+    echo "Synchronization complete."
 }
+
+# Execute the function with the desired parameters
+syncrepos "/home/yuri/Documents/ObsidianNotes/" "Your custom commit message"
 

@@ -40,3 +40,4 @@ export FZF_DEFAULT_OPTS=" \
 eval $(dircolors "$XDG_CONFIG_HOME"/dircolors/dir_colors)
 eval $(thefuck --alias fuck)
 eval "$(starship init zsh)"
+fastfetch

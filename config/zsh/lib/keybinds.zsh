@@ -4,8 +4,10 @@
 # Key code table: https://www.zsh.org/mla/users/2014/msg00266.html
 
 # vim mode keybindings
-bindkey -v
-#
+#bindkey -v
+# emacs keybindings
+bindkey -e
+
 bindkey '^P' up-history                           # ctrl-p
 bindkey '^N' down-history                         # ctrl-n
 bindkey -M viins '^p' up-line-or-history
