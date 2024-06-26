@@ -35,8 +35,6 @@ export FZF_DEFAULT_OPTS=" \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
-#$(fast-theme XDG:catppuccin-mocha)
-
 eval $(dircolors "$XDG_CONFIG_HOME"/dircolors/dir_colors)
 eval $(thefuck --alias fuck)
 eval "$(starship init zsh)"

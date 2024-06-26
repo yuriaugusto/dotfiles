@@ -19,7 +19,7 @@ else
     export EDITOR="vim"
 fi
 
-export TERMINAL="gnome-terminal"
+export TERMINAL="com.raggesilver.BlackBox"
 export BROWSER="firefox"
 export PAGER="less"
 export TERM="xterm-256color"
