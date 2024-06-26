@@ -19,7 +19,8 @@ else
     export EDITOR="vim"
 fi
 
-export TERMINAL="com.raggesilver.BlackBox"
+export BAT_THEME="Nord"
+export TERMINAL="alacritty"
 export BROWSER="firefox"
 export PAGER="less"
 export TERM="xterm-256color"

@@ -22,11 +22,12 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
 # directories
-alias work='cd $HOME/Workspace/'
+alias dotfiles='cd $HOME/git/dotfiles/'
 alias docs='cd $HOME/Documents/'
 alias down='cd $HOME/Downloads/'
 alias notes='cd $HOME/Documents/ObsidianNotes'
-alias cat='bat'
+
+if [ $(command -v bat) ]; then alias cat='bat'; fi
 
 # fedora package manager
 alias updatefedora='sudo dnf update && flatpak update'
@@ -34,7 +35,7 @@ alias logout='gnome-session-quit'
 alias reboot='systemctl reboot -i'
 
 # If eza installed, then use exa for some ls commands
-if [ "$(command -v eza)" ]; then
+if [ $(command -v eza) ]; then
     alias l='eza -aF --icons' # Quick ls
     alias la='eza -aF --icons' # List all
     alias ll='eza -laF --icons' # Show details
