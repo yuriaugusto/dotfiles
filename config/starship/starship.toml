@@ -1,105 +1,164 @@
-palette = "catppuccin_mocha"
+"$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[▒▓](mantle)\
+[](color_yellow)\
+$os\
+$username\
+[](bg:color_orange fg:color_yellow)\
 $directory\
-[](fg:mantle bg:sky)\
-[](fg:sky bg:lavender)\
-[](fg:lavender bg:blue)\
+[](fg:color_orange bg:color_red)\
 $git_branch\
 $git_status\
-[ ](fg:blue)\
-"""
-
-right_format = """
-$cmd_duration\
+[](fg:color_red bg:color_darkred)\
+$c\
+$rust\
+$golang\
 $nodejs\
-$battery\
-"""
-# [░▒▓](#6272a4)\
-# add_newline = false
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:color_darkred bg:color_bg2)\
+$docker_context\
+$conda\
+[](fg:color_bg2 bg:color_bg1)\
+$time\
+[ ](fg:color_bg1)\
+$line_break$character"""
 
-# Replace the '❯' symbol in the prompt with '➜'
-# [character] # The name of the module we are configuring is 'character'
-# success_symbol = '[❯❯](bold green)'
-# error_symbol = '[❯❯](bold red)'# The 'successcd_symbol' segment is being set to '➜' with the color 'bold green'
+palette = "onedark"
 
-# [username]
-# show_always = true
-# style_user = "bg:#282A36 fg:#bd93f9 bold"
-# style_root = "bg:#bd93f9 fg:#000000 italic"
-# format = '[ $user ]($style)'
-# disabled = false
+[palettes.onedark]
+color_fg0 = '#abb2bf'
+color_bg1 = '#31353f'
+color_bg2 = '#393f4a'
+color_blue = '#61afef'
+color_aqua = '#56b6c2'
+color_green = '#98c379'
+color_orange = '#d19a66'
+color_purple = '#c678dd'
+color_red = '#e06c75'
+color_darkred = '#8b3434'
+color_yellow = '#e5c07b'
+
+[os]
+disabled = false
+style = "bg:color_yellow fg:color_bg1"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:color_yellow fg:color_bg1"
+style_root = "bg:color_yellow fg:color_bg1"
+format = '[ $user ]($style)'
 
 [directory]
-style = "fg:lavender bg:mantle"
+style = "fg:color_bg1 bg:color_orange"
 format = "[ $path ]($style)"
 truncation_length = 3
-truncate_to_repo = false
 truncation_symbol = "…/"
 
 [directory.substitutions]
-# "Documents" = "  "
-# "Downloads" = "  "
-# # "Music" = ""
-# "Pictures" = "  "
-# "~/github.com/" = "http://github.com"
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
 
 [git_branch]
-symbol = ""
-style = "bg:blue"
-format = '[[ $symbol $branch ](fg:mantle bg:blue)]($style)'
+symbol = ""
+style = "bg:color_red"
+format = '[[ $symbol $branch ](fg:color_bg1 bg:color_red)]($style)'
 
 [git_status]
-style = "bg:blue"
-format = '[[($all_status$ahead_behind )](fg:mantle bg:blue)]($style)'
+style = "bg:color_red"
+format = '[[($all_status$ahead_behind )](fg:color_bg1 bg:color_red)]($style)'
 
 [nodejs]
 symbol = ""
-format = '[[ $symbol($version)](fg:#ff5555)]($style)'
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
-[battery]
-format = '[ $percentage]($style)'
+[c]
+symbol = " "
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
-[[battery.display]]
-threshold = 50
-style = 'fg:#50fa7b'
+[rust]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
+[golang]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
-[cmd_duration]
-min_time = 1000
-format = ' [$duration](bold yellow)'
-#
-# [time]
-# disabled = false
-# time_format = "%R" # Hour:Minute Format
-# style = "bg:#282A36 fg:blue bold"
-# format = '[[ $time ](bg:base fg:lavender bold)]($style)'
+[php]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
-[palettes.catppuccin_mocha]
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
+[java]
+symbol = " "
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[python]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:color_bg2"
+format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg2)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:color_bg1"
+format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[](bold fg:color_green)'
+error_symbol = '[](bold fg:color_red)'
+vimcmd_symbol = '[](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
+vimcmd_replace_symbol = '[](bold fg:color_purple)'
+vimcmd_visual_symbol = '[](bold fg:color_yellow)'

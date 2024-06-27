@@ -1,10 +1,15 @@
 live_config_reload = true
 
+import = [
+    "~/.config/alacritty/colors/one_dark.toml"
+]
+
 [env]
 TERM = "xterm-256color"
 
 [window]
-decorations = "buttonless"
+decorations = "none"
+blur = true
 dynamic_padding = false
 opacity = 0.9
 
