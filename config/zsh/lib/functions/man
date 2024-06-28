@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 man() {		# some settings for man?
   env \
     LESS_TERMCAP_mb=$(printf "\e[1;31m") \

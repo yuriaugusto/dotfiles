@@ -1,2 +1,1 @@
 function 2doc() { soffice --headless --convert-to doc "$1"; }
-
