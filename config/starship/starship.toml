@@ -97,48 +97,48 @@ format = '[[($all_status$ahead_behind )](fg:color_bg1 bg:color_red)]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color_darkred"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_darkred)]($style)'
 
 [c]
 symbol = " "
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color_darkred"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_darkred)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color_darkred"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_darkred)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color_darkred"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_darkred)]($style)'
 
 [php]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color_darkred"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_darkred)]($style)'
 
 [java]
 symbol = " "
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color_darkred"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_darkred)]($style)'
 
 [kotlin]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color_darkred"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_darkred)]($style)'
 
 [haskell]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color_darkred"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_darkred)]($style)'
 
 [python]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color_darkred"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_darkred)]($style)'
 
 [docker_context]
 symbol = ""

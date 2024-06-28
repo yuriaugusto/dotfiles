@@ -68,6 +68,8 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 
+alias mkdir='mkdir -pv'
+
 # suffix
 alias -s {md,markdown,txt}="$EDITOR"
 alias -s py='python'

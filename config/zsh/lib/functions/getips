@@ -1,0 +1,15 @@
+#!/bin/bash
+
+xipv4=$(curl -4 ifconfig.me)
+xipv6=$(curl -6 ifconfig.me)
+
+ipv4=$(ip -4 addr | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | grep -v 127.0.0.1)
+ipv6=$(ip -6 addr | grep -oP '(?<=inet6\s)[\da-f:]+' | grep -v "::1" | grep -v "fe80")
+
+echo 'External IPs:'
+echo 'IPv4:' $xipv4
+echo 'IPv6:' $xipv6
+
+echo 'Internal IPs:'
+echo 'IPv4:' $ipv4
+echo 'IPv6:' $ipv6
