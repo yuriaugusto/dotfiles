@@ -55,6 +55,7 @@ fi
 alias ..='cd ..;pwd'
 alias ...='cd ../..;pwd'
 alias ....='cd ../../..;pwd'
+alias .....='cd ../../../..;pwd'
 
 # directory stack
 alias d='dirs -v'
@@ -69,6 +70,19 @@ alias mv='mv -iv'
 alias rm='rm -iv'
 
 alias mkdir='mkdir -pv'
+
+alias ping='ping -c 5'
+
+# get top process eating memory
+alias psmem='ps -e -orss=,args= | sort -b -k1 -nr'
+alias psmem10='ps -e -orss=,args= | sort -b -k1 -nr | head -n 10'
+
+# get top process eating cpu if not work try execute : export LC_ALL='C'
+alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1,1n -nr'
+alias pscpu10='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1,1n -nr | head -n 10'
+
+# top10 of the history
+alias hist10='print -l ${(o)history%% *} | uniq -c | sort -nr | head -n 10'
 
 # suffix
 alias -s {md,markdown,txt}="$EDITOR"
