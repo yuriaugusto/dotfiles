@@ -1,1 +1,3 @@
+#!/usr/bin/env bash
+
 function 2doc() { soffice --headless --convert-to doc "$1"; }

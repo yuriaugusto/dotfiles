@@ -1,1 +1,3 @@
+#!/usr/bin/env bash
+
 function 2tiff() { convert "$1" "${1%%.*}.tiff" && rm "$1"; }

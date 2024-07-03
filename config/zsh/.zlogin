@@ -8,4 +8,3 @@
         zrecompile -pq "$zcompdump"
     fi
 ) &!
-

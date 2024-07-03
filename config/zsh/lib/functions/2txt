@@ -1,2 +1,3 @@
-function 2txt() { soffice --headless --convert-to txt "$1"; }
+#!/usr/bin/env bash
 
+function 2txt() { soffice --headless --convert-to txt "$1"; }

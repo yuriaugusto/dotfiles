@@ -1,2 +1,3 @@
+#!/usr/bin/env bash
 
 function 2jpg() { convert "$1""${1%%.*}.jpg" && rm "$1"; }

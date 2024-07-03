@@ -27,7 +27,6 @@ bindkey '^[[1;5C' forward-word                    # ctrl + ->
 bindkey '^[[1;5D' backward-word                   # ctrl + <-
 
 # search history
-bindkey ' ' magic-space                           # do history expansion on space
 bindkey '^r' history-incremental-pattern-search-backward
 bindkey '^s' history-incremental-pattern-search-forward
 bindkey '^P' up-history                           # ctrl-p

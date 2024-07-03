@@ -1,2 +1,3 @@
-function 2odt() { soffice --headless --convert-to odt "$1"; }
+#!/usr/bin/env bash
 
+function 2odt() { soffice --headless --convert-to odt "$1"; }

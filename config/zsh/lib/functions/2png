@@ -1,2 +1,3 @@
+#!/usr/bin/env bash
 
 function 2png() { convert "$1" "${1%%.*}.png" && rm "$1"; }

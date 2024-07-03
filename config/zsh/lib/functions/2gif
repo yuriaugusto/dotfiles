@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 function 2gif() {
     if [ ! -d "/tmp/2gif" ]; then mkdir "/tmp/2gif"; fi
     if [ ${1: -4} == ".mp4" ] || [ ${1: -4} == ".mov" ] || [ ${1: -4} == ".avi" ] || [ ${1: -4} == ".flv" ] || [ ${1: -4} == ".mpg" ] || [ ${1: -5} == ".webm" ]
