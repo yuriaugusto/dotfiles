@@ -16,7 +16,7 @@ source $ZPLUGINDIR/zsh_unplugged/zsh_unplugged.zsh
 repos=(
   romkatv/zsh-defer
   zsh-users/zsh-completions
-  zsh-users/fast-syntax-highlighting.plugin
+  zdharma-continuum/fast-syntax-highlighting
   zsh-users/zsh-history-substring-search
   zsh-users/zsh-autosuggestions
 )
