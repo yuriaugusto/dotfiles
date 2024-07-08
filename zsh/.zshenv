@@ -21,7 +21,7 @@ else
 fi
 
 export BAT_THEME="OneDark"
-export TERMINAL="alacritty"
+export TERMINAL="com.raggesilver.BlackBox"
 export BROWSER="firefox"
 export PAGER="less"
 export TERM="xterm-256color"

@@ -27,7 +27,9 @@ alias docs='cd $HOME/Documents/'
 alias down='cd $HOME/Downloads/'
 alias notes='cd $HOME/Documents/ObsidianNotes'
 
-if [ $(command -v bat) ]; then alias cat='bat'; fi
+if [ $(command -v bat) ]; then alias cat='bat -P'; fi
+
+alias blackbox="flatpak run com.raggesilver.BlackBox"
 
 # fedora package manager
 alias updatefedora='sudo dnf update && flatpak update'
@@ -133,8 +135,7 @@ alias myxip='curl icanhazip.com' # get external IP
 alias myip="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'" # Show laptop's IP addresses
 alias hackernews='curl hkkr.in' # get hacker news
 
-alias restartsound='systemctl --user restart pipewire pipewire-pulse && systemctl --user daemon-reload'
+#alias restartsound='systemctl --user restart pipewire pipewire-pulse && systemctl --user daemon-reload'
 alias reload='source $ZDOTDIR/.zshrc'
 alias editzshrc='nvim $ZDOTDIR/.zshrc'
 alias editalias='nvim $ZDOTDIR/lib/alias.zsh'
-alias editfunc='nvim $ZDOTDIR/lib/zfunc.zsh'
