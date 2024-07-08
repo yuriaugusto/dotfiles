@@ -1,7 +1,7 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */home/yuri/git/dotfiles/.fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/home/yuri/git/dotfiles/.fzf/bin"
+if [[ ! "$PATH" == *$DOTFILES/.fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}$DOTFILES/.fzf/bin"
 fi
 
 source <(fzf --zsh)

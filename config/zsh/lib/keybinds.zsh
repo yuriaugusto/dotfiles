@@ -3,36 +3,137 @@
 # e.g. https://dougblack.io/words/zsh-vi-mode.html
 # Key code table: https://www.zsh.org/mla/users/2014/msg00266.html
 
+zmodload zsh/complist
+
+typeset -gA keys=(
+    Up                   '^[[A'
+    Down                 '^[[B'
+    Right                '^[[C'
+    Left                 '^[[D'
+    Home                 '^[[H'
+    End                  '^[[F'
+    Insert               '^[[2~'
+    Delete               '^[[3~'
+    PageUp               '^[[5~'
+    PageDown             '^[[6~'
+    Backspace            '^?'
+
+    Shift+Up             '^[[1;2A'
+    Shift+Down           '^[[1;2B'
+    Shift+Right          '^[[1;2C'
+    Shift+Left           '^[[1;2D'
+    Shift+End            '^[[1;2F'
+    Shift+Home           '^[[1;2H'
+    Shift+Insert         '^[[2;2~'
+    Shift+Delete         '^[[3;2~'
+    Shift+PageUp         '^[[5;2~'
+    Shift+PageDown       '^[[6;2~'
+    Shift+Backspace      '^?'
+    Shift+Tab            '^[[Z'
+
+    Alt+Up               '^[[1;3A'
+    Alt+Down             '^[[1;3B'
+    Alt+Right            '^[[1;3C'
+    Alt+Left             '^[[1;3D'
+    Alt+End              '^[[1;3F'
+    Alt+Home             '^[[1;3H'
+    Alt+Insert           '^[[2;3~'
+    Alt+Delete           '^[[3;3~'
+    Alt+PageUp           '^[[5;3~'
+    Alt+PageDown         '^[[6;3~'
+    Alt+Backspace        '^[^?'
+
+    Alt+Shift+Up         '^[[1;4A'
+    Alt+Shift+Down       '^[[1;4B'
+    Alt+Shift+Right      '^[[1;4C'
+    Alt+Shift+Left       '^[[1;4D'
+    Alt+Shift+End        '^[[1;4F'
+    Alt+Shift+Home       '^[[1;4H'
+    Alt+Shift+Insert     '^[[2;4~'
+    Alt+Shift+Delete     '^[[3;4~'
+    Alt+Shift+PageUp     '^[[5;4~'
+    Alt+Shift+PageDown   '^[[6;4~'
+    Alt+Shift+Backspace  '^[^H'
+
+    Ctrl+Up              '^[[1;5A'
+    Ctrl+Down            '^[[1;5B'
+    Ctrl+Right           '^[[1;5C'
+    Ctrl+Left            '^[[1;5D'
+    Ctrl+Home            '^[[1;5H'
+    Ctrl+End             '^[[1;5F'
+    Ctrl+Insert          '^[[2;5~'
+    Ctrl+Delete          '^[[3;5~'
+    Ctrl+PageUp          '^[[5;5~'
+    Ctrl+PageDown        '^[[6;5~'
+    Ctrl+Backspace       '^H'
+
+    Ctrl+Shift+Up        '^[[1;6A'
+    Ctrl+Shift+Down      '^[[1;6B'
+    Ctrl+Shift+Right     '^[[1;6C'
+    Ctrl+Shift+Left      '^[[1;6D'
+    Ctrl+Shift+Home      '^[[1;6H'
+    Ctrl+Shift+End       '^[[1;6F'
+    Ctrl+Shift+Insert    '^[[2;6~'
+    Ctrl+Shift+Delete    '^[[3;6~'
+    Ctrl+Shift+PageUp    '^[[5;6~'
+    Ctrl+Shift+PageDown  '^[[6;6~'
+    Ctrl+Shift+Backspace '^?'
+
+    Ctrl+Alt+Up          '^[[1;7A'
+    Ctrl+Alt+Down        '^[[1;7B'
+    Ctrl+Alt+Right       '^[[1;7C'
+    Ctrl+Alt+Left        '^[[1;7D'
+    Ctrl+Alt+Home        '^[[1;7H'
+    Ctrl+Alt+End         '^[[1;7F'
+    Ctrl+Alt+Insert      '^[[2;7~'
+    Ctrl+Alt+Delete      '^[[3;7~'
+    Ctrl+Alt+PageUp      '^[[5;7~'
+    Ctrl+Alt+PageDown    '^[[6;7~'
+    Ctrl+Alt+Backspace   '^[^H'
+
+    Ctrl+Alt+Shift+Up        '^[[1;8A'
+    Ctrl+Alt+Shift+Down      '^[[1;8B'
+    Ctrl+Alt+Shift+Right     '^[[1;8C'
+    Ctrl+Alt+Shift+Left      '^[[1;8D'
+    Ctrl+Alt+Shift+Home      '^[[1;8H'
+    Ctrl+Alt+Shift+End       '^[[1;8F'
+    Ctrl+Alt+Shift+Insert    '^[[2;8~'
+    Ctrl+Alt+Shift+Delete    '^[[3;8~'
+    Ctrl+Alt+Shift+PageUp    '^[[5;8~'
+    Ctrl+Alt+Shift+PageDown  '^[[6;8~'
+    Ctrl+Alt+Shift+Backspace '^?'
+  )
+
 # emacs keybindings
 bindkey -e
 
-bindkey '^?' backward-delete-char                 # backspace
-bindkey '^h' backward-delete-char                 # ctrl-h
-bindkey '^w' backward-kill-word                   # ctrl-w
-bindkey '^H' backward-kill-word                   # ctrl-backspace
-bindkey '^[[3;5~' kill-word                       # ctrl + Supr
-bindkey '^U' backward-kill-line                   # ctrl + U
-bindkey '^[[3~' delete-char                       # delete
-bindkey '^[[Z' undo                               # shift + tab undo last action
-bindkey "^K" kill-line                            # ctrl-k
-bindkey "^D" delete-char                          # ctrl-d
-bindkey "^L" clear-screen                         # ctrl-l
-bindkey '^[[H' beginning-of-line                  # home
-bindkey '^[[F' end-of-line                        # end
-bindkey "^A" beginning-of-line                    # ctrl-a
-bindkey "^E" end-of-line                          # ctrl-e
-bindkey "^F" forward-word                         # ctrl-f
-bindkey "^B" backward-word                        # ctrl-b
-bindkey '^[[1;5C' forward-word                    # ctrl + ->
-bindkey '^[[1;5D' backward-word                   # ctrl + <-
+bindkey -- "${keys[Backspace]}"  backward-delete-char
+bindkey -- "${keys[Ctrl+Backspace]}"  backward-kill-word
+bindkey -- "${keys[Ctrl+Delete]}"  kill-word
+bindkey -- "${keys[Delete]}"  delete-char
+bindkey -- "${keys[Shift+Tab]}"  undo
+bindkey -- "${keys[End]}"  end-of-line
+bindkey -- "${keys[Ctrl+Right]}"  forward-word
+bindkey -- "${keys[Ctrl+Left]}"  backward-word
+             
+bindkey '^w' backward-kill-word                                   # ctrl-w
+bindkey '^U'  backward-kill-line                                  # ctrl-U
+bindkey "^K" kill-line                                            # ctrl-k
+bindkey "^D" delete-char                                          # ctrl-d
+bindkey "^L" clear-screen                                         # ctrl-l
+bindkey "^A" beginning-of-line                                    # ctrl-a
+bindkey "^E" end-of-line                                          # ctrl-e
+bindkey "^F" forward-word                                         # ctrl-f
+bindkey "^B" backward-word                                        # ctrl-b
+
 
 # search history
 bindkey '^r' history-incremental-pattern-search-backward
 bindkey '^s' history-incremental-pattern-search-forward
 bindkey '^P' up-history                           # ctrl-p
 bindkey '^N' down-history                         # ctrl-n
-bindkey '^[[5~' beginning-of-buffer-or-history    # page up
-bindkey '^[[6~' end-of-buffer-or-history          # page down
+bindkey -- "${keys[PageUp]}" beginning-of-buffer-or-history     # page up
+bindkey -- "${keys[PageDown]}" end-of-buffer-or-history         # page down
 
 #-----------------------------------------------------
 # https://github.com/zsh-users/zsh-history-substring-search

@@ -68,11 +68,6 @@ setopt CLOBBER              # turn off warning "file exists" with > and >>
 setopt LOCAL_OPTIONS # allow functions to have local options
 setopt LOCAL_TRAPS # allow functions to have local traps
 
-export FZF_DEFAULT_OPTS=" \
---color=bg+:#31353f,bg:#282c34,spinner:#e5c07b,hl:#e55561 \
---color=fg:#abb2bf,header:#e86671,info:#d19a66,pointer:#e5c07b \
---color=marker:#e5c07b,fg+:#abb2bf,prompt:#d19a66,hl+:#e86671"
-
 eval $(dircolors "$XDG_CONFIG_HOME"/dircolors/dir_colors)
 eval $(thefuck --alias fuck)
 eval "$(starship init zsh)"

@@ -1,10 +1,3 @@
-# ZSH HISTORY CONFIG
-
-export HISTFILE="$ZCACHEDIR/zhistory"     # History filepath
-export HISTSIZE=10000                   # Maximum events for internal history
-export SAVEHIST=10000                   # Maximum events in history file
-export HISTORY_IGNORE="(ls|cd|pwd|zsh|exit|cd ..)"
-
 # history options
 setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format.
 setopt SHARE_HISTORY             # Share history between all sessions.
@@ -16,4 +9,3 @@ setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space.
 setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
 setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks from history items.
-

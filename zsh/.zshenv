@@ -12,13 +12,50 @@ export ZDATADIR="$XDG_DATA_HOME/zsh"
 export ZCACHEDIR="$XDG_CACHE_HOME/zsh"
 export ZPLUGINDIR=${ZPLUGINDIR:-${ZDOTDIR:-$HOME/.config/zsh}/plugins}
 
+export HISTFILE="$ZCACHEDIR/zhistory"     # History filepath
+export HISTSIZE=10000                   # Maximum events for internal history
+export SAVEHIST=10000                   # Maximum events in history file
+export HISTORY_IGNORE="(ls|cd|pwd|zsh|exit|cd ..)"
+
 export DOTFILES="$HOME/git/dotfiles"
 
 if builtin command -v nvim > /dev/null 2>&1; then
     export EDITOR="nvim"
-else
+    export VISUAL="nvim"
+elif
     export EDITOR="vim"
+    export VISUAL="vim"
+else
+    export EDITOR="vi"
+    export VISUAL="vi"
 fi
+
+# FZF
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+FZF_COLORS="bg+:#31353f,\
+bg:#282c34,\
+fg:#abb2bf,\
+fg+:#abb2bf,\
+border:#7e3992,\
+spinner:#e5c07b,\
+hl:#e55561,\
+header:#e86671,\
+info:#d19a66,\
+pointer:#e5c07b,\
+marker:#e5c07b,\
+prompt:#d19a66,\
+hl+:#e86671"
+
+export FZF_DEFAULT_OPTS=" \
+--height 50% \
+--margin 4% \
+--border rounded \
+--color '$FZF_COLORS'"
+
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 10'"
+export FZF_COMPLETION_DIR_COMMANDS="cd pushd rmdir tree ls"
 
 export BAT_THEME="OneDark"
 export TERMINAL="com.raggesilver.BlackBox"
