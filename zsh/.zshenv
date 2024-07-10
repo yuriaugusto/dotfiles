@@ -22,12 +22,9 @@ export DOTFILES="$HOME/git/dotfiles"
 if builtin command -v nvim > /dev/null 2>&1; then
     export EDITOR="nvim"
     export VISUAL="nvim"
-elif
+else
     export EDITOR="vim"
     export VISUAL="vim"
-else
-    export EDITOR="vi"
-    export VISUAL="vi"
 fi
 
 # FZF

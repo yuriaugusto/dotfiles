@@ -74,3 +74,5 @@ eval "$(starship init zsh)"
 fastfetch
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source <(fzf --zsh)
