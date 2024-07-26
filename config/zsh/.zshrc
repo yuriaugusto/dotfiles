@@ -37,9 +37,6 @@ autoload -U $ZDOTDIR/lib/functions/*(:t)
 
 declare -U path                             # prevent duplicate entries in path
 
-# Treat these characters as part of a word.
-[[ -n "$WORDCHARS" ]] || WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
-
 # prints colors
 palette() {
     local -a colors
