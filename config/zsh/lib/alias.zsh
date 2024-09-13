@@ -1,4 +1,5 @@
 alias sudo='sudo '
+alias dnf='dnf5'
 
 # color all the stuff
 alias grep='grep --color=auto'
