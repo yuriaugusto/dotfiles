@@ -134,7 +134,6 @@ alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg' # update grub
 
 alias myxip='curl icanhazip.com' # get external IP
 alias myip="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'" # Show laptop's IP addresses
-alias hackernews='curl hkkr.in' # get hacker news
 
 #alias restartsound='systemctl --user restart pipewire pipewire-pulse && systemctl --user daemon-reload'
 alias reload='source $ZDOTDIR/.zshrc'

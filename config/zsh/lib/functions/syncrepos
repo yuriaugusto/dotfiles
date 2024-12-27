@@ -14,26 +14,53 @@ function syncrepos() {
 
     # Fetch latest changes from the remote repository
     echo "Fetching latest changes from the remote repository..."
-    git fetch || { echo "Failed to fetch changes from the remote repository" >&2; return 1; }
+    git fetch || {
+        echo "Failed to fetch changes from the remote repository" >&2
+        return 1
+    }
 
-    # Check for local changes and commit them if any
+    echo "Checking for untracked files and directories..."
+    git status --porcelain | grep "^??" || echo "No untracked files or directories."
+
     if [[ $(git status --porcelain) ]]; then
-        echo "Local changes detected. Adding files to the staging area..."
-        git add .
+        echo "Local changes detected:"
+        git status --porcelain
+
+        # Adding all local changes, including deletions
+        echo "Adding changes (including deletions) to the staging area..."
+        git add -A # Use -A to ensure deletions are also staged
+
+        # Commit the changes with the provided message
         echo "Committing changes with message: $commit_message"
-        git commit -m "$commit_message" || { echo "Failed to commit changes" >&2; return 1; }
+        git commit -m "$commit_message" || {
+            echo "Failed to commit changes" >&2
+            return 1
+        }
     else
         echo "No local changes to commit."
     fi
 
     # Synchronize with remote repository
-    echo "Synchronizing with remote repository..."
-    git pull --rebase || { echo "Failed to pull changes from the remote repository" >&2; return 1; }
-    git push || { echo "Failed to push changes to the remote repository" >&2; return 1; }
+    echo "Synchronizing with the remote repository (rebase first, then push)..."
+
+    # Pull and rebase changes from the remote repository
+    if git pull --rebase; then
+        echo "Successfully pulled changes from the remote repository."
+    else
+        echo "Failed to pull changes from the remote repository. Resolve conflicts manually if any." >&2
+        return 1
+    fi
+
+    # Push the committed changes to the remote repository
+    if git push; then
+        echo "Successfully pushed changes to the remote repository."
+    else
+        echo "Failed to push changes to the remote repository." >&2
+        return 1
+    fi
 
     echo "Synchronization complete."
 }
 
 # Execute the function with the desired parameters
 syncrepos
-
