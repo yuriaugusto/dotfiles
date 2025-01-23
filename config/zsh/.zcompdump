@@ -1,4 +1,4 @@
-#files: 1036	version: 5.9
+#files: 1016	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -28,7 +28,6 @@ _comps=(
 'add-zle-hook-widget' '_add-zle-hook-widget'
 'add-zsh-hook' '_add-zsh-hook'
 'admin' '_sccs'
-'alacritty' '_alacritty'
 'ali' '_mh'
 'alias' '_alias'
 'amaya' '_webbrowser'
@@ -320,7 +319,6 @@ _comps=(
 'dnf-2' '_dnf'
 'dnf-3' '_dnf'
 'doas' '_doas'
-'dolphin' '_dolphin'
 'domainname' '_yp'
 'dos2unix' '_dos2unix'
 'dosdel' '_floppy'
@@ -403,7 +401,6 @@ _comps=(
 'fc' '_fc'
 'fc-list' '_xft_fonts'
 'fc-match' '_xft_fonts'
-'fd' '_fd'
 'feh' '_feh'
 'fetch' '_fetch'
 'fetchmail' '_fetchmail'
@@ -678,8 +675,6 @@ _comps=(
 'hotjava' '_webbrowser'
 'htop' '_htop'
 'hwinfo' '_hwinfo'
-'hyprctl' '_hyprctl'
-'hyprpm' '_hyprpm'
 'iceweasel' '_mozilla'
 'icombine' '_ispell'
 'iconv' '_iconv'
@@ -744,10 +739,7 @@ _comps=(
 'jot' '_jot'
 'journalctl' '_journalctl'
 'jq' '_jq'
-'kcmshell5' '_systemsettings'
-'kcmshell6' '_systemsettings'
 'kdeconnect-cli' '_kdeconnect'
-'kde-inhibit' '_kde-inhibit'
 'kdump' '_kdump'
 'kernel-install' '_kernel-install'
 'keystone' '_openstack'
@@ -756,18 +748,13 @@ _comps=(
 'kill' '_kill'
 'killall' '_killall'
 'killall5' '_killall'
-'kinfocenter' '_systemsettings'
 'kioclient' '_kfmclient'
 'kldload' '_kld'
 'kldunload' '_kld'
 'knock' '_knock'
 'konqueror' '_webbrowser'
-'konsole' '_konsole'
-'konsoleprofile' '_konsole'
 'kpartx' '_kpartx'
 'kpdf' '_pdf'
-'krunner' '_krunner'
-'kscreen-doctor' '_kscreen-doctor'
 'ksh' '_sh'
 'ksh88' '_sh'
 'ksh93' '_sh'
@@ -847,6 +834,7 @@ _comps=(
 'lzop' '_lzop'
 'm-a' '_module-assistant'
 'mac2unix' '_dos2unix'
+'machinectl' '_machinectl'
 'madison' '_madison'
 'magnum' '_openstack'
 'mail' '_mail'
@@ -884,7 +872,6 @@ _comps=(
 'mere' '_mere'
 'merge' '_rcs'
 'mergechanges' '_mergechanges'
-'meson' '_meson'
 'metaflac' '_flac'
 'mformat' '_mtools'
 'mgv' '_pspdf'
@@ -935,7 +922,6 @@ _comps=(
 'mpc' '_mpc'
 'mplayer' '_mplayer'
 'mpstat' '_sysstat'
-'mpv' '_mpv'
 'mr' '_myrepos'
 'mrd' '_mtools'
 'mread' '_mtools'
@@ -983,7 +969,6 @@ _comps=(
 'nginx' '_nginx'
 'ngrep' '_ngrep'
 'nice' '_nice'
-'ninja' '_ninja'
 'nkf' '_nkf'
 'nl' '_nl'
 'nm' '_nm'
@@ -1098,8 +1083,6 @@ _comps=(
 'pkgrm' '_pkgrm'
 'pkgtool' '_pkgtool'
 'pkill' '_pgrep'
-'plasmashell' '_plasmashell'
-'playerctl' '_playerctl'
 'pldd' '_pids'
 'plutil' '_plutil'
 'pmake' '_make'
@@ -1409,12 +1392,9 @@ _comps=(
 'svnliteadmin' '_subversion'
 'swaks' '_swaks'
 'swanctl' '_swanctl'
-'swaync' '_swaync'
-'swaync-client' '_swaync-client'
 'swift' '_swift'
 'swiftc' '_swift'
 'sw_vers' '_sw_vers'
-'swww' '_swww'
 'sync' '_nothing'
 'sysclean' '_sysclean'
 'sysctl' '_sysctl'
@@ -1433,13 +1413,13 @@ _comps=(
 'systemd-inhibit' '_systemd-inhibit'
 'systemd-machine-id-setup' '_systemd'
 'systemd-notify' '_systemd'
+'systemd-nspawn' '_systemd-nspawn'
 'systemd-path' '_systemd-path'
 'systemd-resolve' '_resolvectl'
 'systemd-run' '_systemd-run'
 'systemd-tmpfiles' '_systemd-tmpfiles'
 'systemd-tty-ask-password-agent' '_systemd'
 'system_profiler' '_system_profiler'
-'systemsettings' '_systemsettings'
 'sysupgrade' '_sysupgrade'
 'tac' '_tac'
 'tacker' '_openstack'
@@ -1474,7 +1454,6 @@ _comps=(
 'tkconch' '_twisted'
 'tkinfo' '_texinfo'
 'tla' '_tla'
-'tldr' '_tldr'
 'tload' '_tload'
 'tmux' '_tmux'
 'todo' '_devtodo'
@@ -1552,6 +1531,7 @@ _comps=(
 'update-alternatives' '_update-alternatives'
 'update-rc.d' '_update-rc.d'
 'upgradepkg' '_pkgtool'
+'upower' '_upower'
 'uptime' '_uptime'
 'urpme' '_urpmi'
 'urpmf' '_urpmi'
@@ -1672,7 +1652,6 @@ _comps=(
 'wiggle' '_wiggle'
 'wipefs' '_wipefs'
 'wl-copy' '_wl-copy'
-'wlogout' '_wlogout'
 'wl-paste' '_wl-paste'
 'wodim' '_cdrecord'
 'wpa_cli' '_wpa_cli'
@@ -1748,7 +1727,6 @@ _comps=(
 'ypwhich' '_yp'
 'ypxfr' '_yp'
 'ytalk' '_other_accounts'
-'yt-dlp' '_yt-dlp'
 'yum' '_yum'
 'yumdb' '_yum'
 'zargs' '_zargs'
@@ -1914,20 +1892,16 @@ bindkey '^[,' _history-complete-newer
 bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
-autoload -Uz _alacritty _bat _bluetoothctl _bootctl _busctl \
-            _bwrap _code _coredumpctl _curl _dkms \
-            _dolphin _eza _fastfetch _fd _firewalld \
-            _flatpak _hostnamectl _hyprctl _hyprpm _journalctl \
-            _kdeconnect _kde-inhibit _kernel-install _konsole _krunner \
-            _kscreen-doctor _libinput _localectl _loginctl _meson \
-            _mpv _networkctl _ninja _nvme _oomctl \
-            _plasmashell _playerctl _podman _resolvectl _rg \
+autoload -Uz _bat _bluetoothctl _bootctl _busctl _bwrap \
+            _code _coredumpctl _curl _eza _fastfetch \
+            _firewalld _flatpak _hostnamectl _journalctl _kernel-install \
+            _libinput _localectl _loginctl _machinectl _networkctl \
+            _nvme _oomctl _podman _resolvectl _rg \
             _run0 _sd_hosts_or_user_at_host _sd_machines _sd_outputmodes _sd_unit_files \
-            _skopeo _snapper _swaync _swaync-client _swww \
-            _systemctl _systemd _systemd-analyze _systemd-delta _systemd-inhibit \
-            _systemd-path _systemd-run _systemd-tmpfiles _systemsettings _timedatectl \
-            _tldr _toolbox _udevadm _udisks2 _varlinkctl \
-            _wl-copy _wlogout _wl-paste _wpctl _yt-dlp \
+            _skopeo _snapper _systemctl _systemd _systemd-analyze \
+            _systemd-delta _systemd-inhibit _systemd-nspawn _systemd-path _systemd-run \
+            _systemd-tmpfiles _timedatectl _toolbox _udevadm _udisks2 \
+            _upower _varlinkctl _wl-copy _wl-paste _wpctl \
             _a2ps _a2utils _aap _abcde _absolute_command_paths \
             _ack _acpi _acpitool _acroread _adb \
             _add-zle-hook-widget _add-zsh-hook _alias _aliases _all_labels \

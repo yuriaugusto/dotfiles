@@ -1,5 +1,4 @@
 alias sudo='sudo '
-alias dnf='dnf5'
 
 # color all the stuff
 alias grep='grep --color=auto'
@@ -23,7 +22,7 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
 # directories
-alias dotfiles='cd $HOME/git/dotfiles/'
+alias dotfiles='cd $HOME/Workspace/dotfiles/'
 alias docs='cd $HOME/Documents/'
 alias down='cd $HOME/Downloads/'
 alias notes='cd $HOME/Documents/ObsidianNotes'
@@ -130,7 +129,7 @@ alias yta-wav="yt-dlp --extract-audio --audio-format wav "
 #Grab the highest quality of video+audio from YouTube
 alias ytv-best="yt-dlp -f bestvideo+bestaudio "
 
-alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg' # update grub
+alias update-grub='sudo grub2-mkconfig -o /boot/grub/grub.cfg' # update grub
 
 alias myxip='curl icanhazip.com' # get external IP
 alias myip="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'" # Show laptop's IP addresses
