@@ -7,6 +7,8 @@ export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_BIN_HOME="${HOME}/.local/bin"
+export XDG_LIB_HOME="${HOME}/.local/lib"
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ZDATADIR="$XDG_DATA_HOME/zsh"
@@ -18,7 +20,7 @@ export HISTSIZE=10000                   # Maximum events for internal history
 export SAVEHIST=10000                   # Maximum events in history file
 export HISTORY_IGNORE="(ls|cd|pwd|zsh|exit|cd ..)"
 
-export DOTFILES="$HOME/git/dotfiles"
+export DOTFILES="$HOME/Workspace/dotfiles"
 
 if builtin command -v nvim > /dev/null 2>&1; then
     export EDITOR="nvim"
@@ -56,7 +58,7 @@ export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 10'"
 export FZF_COMPLETION_DIR_COMMANDS="cd pushd rmdir tree ls"
 
 export BAT_THEME="OneDark"
-export TERMINAL="com.raggesilver.BlackBox"
+export TERMINAL="pytxis"
 export BROWSER="firefox"
 export PAGER="less"
 export TERM="xterm-256color"
