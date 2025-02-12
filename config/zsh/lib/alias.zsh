@@ -36,6 +36,9 @@ alias updatefedora='sudo dnf update && flatpak update'
 alias logout='gnome-session-quit' 
 alias reboot='systemctl reboot -i'
 
+# git commands
+alias gacp='git add . && git commit -m "sync" && git push'
+
 # If eza installed, then use exa for some ls commands
 if [ $(command -v eza) ]; then
     alias l='eza -aF --icons' # Quick ls
